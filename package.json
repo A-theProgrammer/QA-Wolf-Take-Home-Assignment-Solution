@@ -1,9 +1,12 @@
 {
   "name": "qa_wolf_take_home",
   "version": "1.0.0",
-  "description": "",
+  "description": "QA Wolf Take Home Assignment solution with Playwright and Express",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "npx playwright install --with-deps"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
