@@ -86,7 +86,7 @@ node index.js
 
 ## 🧑‍💻 Author
 
-Prepared by **\[Your Name]**, as part of the QA Wolf Take Home Assignment.
+Prepared by **Archit Biswas**, as part of the QA Wolf Take Home Assignment.
 
 ---
 
