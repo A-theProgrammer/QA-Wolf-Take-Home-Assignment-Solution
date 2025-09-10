@@ -77,17 +77,6 @@ node index.js
 
 ---
 
-## 📹 Video Walkthrough
-
-As part of the assignment, I recorded a **Loom video** that covers:
-
-* Why I want to work at QA Wolf.
-* A walkthrough & live demo of the solution in action.
-
-*(Loom link would be included here in submission.)*
-
----
-
 ## 🔍 Notes
 
 * The script relies on Hacker News’ current HTML structure. If their markup changes, selectors may need updating.
