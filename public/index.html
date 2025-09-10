@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Wolf Take Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Welcome to QA Wolf Take Home Project!</h1>
+    <p>Click the button below to run the Playwright test that checks if the first 100 Hacker News articles are sorted from newest to oldest.</p>
+    <div id="spinner" style="display:none"></div>
+    <button id="runTestButton">Run Playwright Test</button>
+    <pre id="testOutput"></pre>
+
+    <script>
+        const button = document.getElementById('runTestButton');
+        const output = document.getElementById('testOutput');
+        const spinner = document.getElementById('spinner');
+        button.addEventListener('click', async () => {
+            button.disabled = true;
+            spinner.style.display = 'block';
+            output.textContent = 'Running Playwright test... This may take a moment.';
+            output.style.color = '#333';
+            try {
+                const response = await fetch('/run-test');
+                const text = await response.text();
+                if (response.ok) {
+                    output.textContent = '✔️ Test successful!\n' + text;
+                    output.style.color = 'green';
+                } else {
+                    output.textContent = '❌ Test failed!\n' + text;
+                    output.style.color = 'red';
+                }
+            } catch (error) {
+                output.textContent = '❌ Error running test: ' + error.message;
+                output.style.color = 'red';
+            } finally {
+                button.disabled = false;
+                spinner.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
